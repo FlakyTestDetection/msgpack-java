@@ -1,15 +1,17 @@
-language: java
-jdk:
-  - openjdk6
-  - openjdk7
-  - oraclejdk7
 branches:
   only:
-    - master
-    - develop
-    - v07
+  - master
+  - develop
+  - v07
+jdk:
+- openjdk6
+- openjdk7
+- oraclejdk7
+language: java
 notifications:
-  email:
-    - muga.nishizawa@gmail.com
-    - ozawa.tsuyoshi@gmail.com
-    - leo@xerial.org
+  email: false
+  slack:
+    rooms: flakycov:U2MeVOPjdi4up1U793ubeIUZ
+    template:
+    - Build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) of %{repository}@%{branch} by %{author} %{result} in %{duration}
+    - 'dashbot: %{repository_name} %{build_id}'
